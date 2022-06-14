@@ -33,7 +33,7 @@ PLAYER_BLUE_COLLISION = pygame.USEREVENT + 1
 PLAYER_RED_COLLISION = pygame.USEREVENT + 2
 
 # Sets velocity of player and bullet movements
-VELOCITY = 4
+VELOCITY = 5
 PROJECTILE_VELOCITY = 10
 
 # Scale factors for ship dilations
@@ -94,30 +94,30 @@ def draw_elements(player_blue, player_red, blue_projectile, red_projectile, play
 def key_bindings(on_key_pressed, player_blue, player_red):
 # Additional conditions are added to add borders around screen
 # Players cannot move outside of window or past barrier between the two
-        if on_key_pressed[pygame.K_w] and player_blue.y - VELOCITY > 0:
-            player_blue.y = player_blue.y - VELOCITY
+    if on_key_pressed[pygame.K_w] and player_blue.y - VELOCITY > 0:
+        player_blue.y = player_blue.y - VELOCITY
 
-        elif on_key_pressed[pygame.K_a] and player_blue.x - VELOCITY > 0:
-            player_blue.x = player_blue.x - VELOCITY
+    elif on_key_pressed[pygame.K_a] and player_blue.x - VELOCITY > 0:
+        player_blue.x = player_blue.x - VELOCITY
 
-        elif on_key_pressed[pygame.K_s] and player_blue.y + VELOCITY + player_blue.height < WIN_HEIGHT:
-            player_blue.y = player_blue.y + VELOCITY
+    elif on_key_pressed[pygame.K_s] and player_blue.y + VELOCITY + player_blue.height < WIN_HEIGHT:
+        player_blue.y = player_blue.y + VELOCITY
 
-        elif on_key_pressed[pygame.K_d] and player_blue.x + VELOCITY + player_blue.width < BARRIER.x:
-            player_blue.x = player_blue.x + VELOCITY
+    elif on_key_pressed[pygame.K_d] and player_blue.x + VELOCITY + player_blue.width < BARRIER.x:
+        player_blue.x = player_blue.x + VELOCITY
 
 # Key bindings for red spaceship
-        if on_key_pressed[pygame.K_UP] and player_red.y - VELOCITY > 0:
-            player_red.y = player_red.y - VELOCITY
+    if on_key_pressed[pygame.K_UP] and player_red.y - VELOCITY > 0:
+        player_red.y = player_red.y - VELOCITY
 
-        elif on_key_pressed[pygame.K_LEFT] and player_red.x - VELOCITY > BARRIER.x:
-            player_red.x = player_red.x - VELOCITY
+    elif on_key_pressed[pygame.K_LEFT] and player_red.x - VELOCITY > BARRIER.x:
+        player_red.x = player_red.x - VELOCITY
 
-        elif on_key_pressed[pygame.K_DOWN] and player_red.y + VELOCITY + player_red.height < WIN_HEIGHT: 
-            player_red.y = player_red.y + VELOCITY
+    elif on_key_pressed[pygame.K_DOWN] and player_red.y + VELOCITY + player_red.height < WIN_HEIGHT: 
+        player_red.y = player_red.y + VELOCITY
 
-        elif on_key_pressed[pygame.K_RIGHT] and player_red.x + VELOCITY + player_red.width < WIN_WIDTH:
-            player_red.x = player_red.x + VELOCITY
+    elif on_key_pressed[pygame.K_RIGHT] and player_red.x + VELOCITY + player_red.width < WIN_WIDTH:
+        player_red.x = player_red.x + VELOCITY
 
 def projectile_functionality(player_blue, player_red, blue_projectile, red_projectile):
 # Adds velocity to projectile because they move further away from (0, 0) on screen
@@ -125,7 +125,7 @@ def projectile_functionality(player_blue, player_red, blue_projectile, red_proje
         projectile.x = projectile.x + PROJECTILE_VELOCITY
         if player_red.colliderect(projectile):
             pygame.event.post(pygame.event.Event(PLAYER_RED_COLLISION))
-            blue_projectile.remove(projectile)
+            blue_projectile.remove(projectile) 
 
 # Must remove projectile from list when at the end of screen such that player's max bullets can be reset
         if projectile.x > WIN_WIDTH:
@@ -181,6 +181,8 @@ def game_loop():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+    
+                pygame.quit()
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LALT and len(blue_projectile) < MAX_PROJECTILE_FIRE:
@@ -220,6 +222,7 @@ def game_loop():
 
         projectile_functionality(player_blue, player_red, blue_projectile, red_projectile)
 
-    pygame.quit()
+    game_loop()
 
-game_loop()
+if __name__ == '__main__':
+    game_loop()
