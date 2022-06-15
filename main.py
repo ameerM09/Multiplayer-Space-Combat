@@ -45,8 +45,7 @@ MAX_PROJECTILE_FIRE = 3
 
 # Sets fonts used in game
 RENDER_HEALTH = pygame.font.SysFont('Comicsans', 25)
-RENDER_WINNER = pygame.font.SysFont('Comicsans', 30)
-RENDER_BUTTON = pygame.font.SysFont('Comicsans', 30)
+RENDER_WINNER = pygame.font.SysFont('Comicsans', 40)
 
 # Modified player objects
 PLAYER_A = pygame.image.load(os.path.join('imgs', 'blue_spaceship.png'))
@@ -162,15 +161,13 @@ def game_loop():
 
     player_blue_winning_statements = [
         'BLUE WINS!',
-        'RED WAS TAKEN OUT BY BLUE WITH A BANG!',
         'A SPECTACULAR TAKEDOWN BY BLUE!',
         'WHAT A PRECISE SHOT FROM BLUE!'
     ]
 
     player_red_winning_statements = [
         'RED WINS!',
-        'BLUE WAS TAKEN OUT BY RED WITH A BANG!',
-        'WHAT A SPECTACULAR TAKEDOWN BY RED!',
+        'A SPECTACULAR TAKEDOWN BY RED!',
         'WHAT A PRECISE SHOT FROM RED!'
     ]
 
