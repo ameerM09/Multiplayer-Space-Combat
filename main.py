@@ -28,7 +28,7 @@ NEON_GREEN = (25, 225, 25)
 # Sets the refresh rate of the game
 FPS = 60
 
-# Setting new pygame events for projectile colissions
+# Setting new pygame events for projectile collisions
 PLAYER_BLUE_COLLISION = pygame.USEREVENT + 1
 PLAYER_RED_COLLISION = pygame.USEREVENT + 2
 
