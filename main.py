@@ -1,18 +1,6 @@
 # Module import from settings package
 from settings import *
 
-SPACE_BACKGROUND = pygame.transform.scale(pygame.image.load(os.path.join('assets', 'space_background.png')), (WIN_WIDTH, WIN_HEIGHT))
-
-# Modified player objects
-PLAYER_A = pygame.image.load(os.path.join('assets', 'blue_spaceship.png'))
-
-BLUE_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(PLAYER_A, (SHIP_WIDTH, SHIP_HEIGHT)), 270)
-
-# Rotates and dilates image
-PLAYER_B = pygame.image.load(os.path.join('assets', 'red_spaceship.png'))
-
-RED_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(PLAYER_B, (SHIP_WIDTH, SHIP_HEIGHT)), 90)
-
 # Function to draw and update elements on screen
 def draw_elements(player_blue, player_red, blue_projectile, red_projectile, player_blue_health, player_red_health, menu_bar):
     WIN.blit(SPACE_BACKGROUND, (0, 0))
