@@ -55,3 +55,5 @@ PLAYER_B = pygame.image.load(os.path.join('assets/red_spaceship.png'))
 RED_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(PLAYER_B, (SHIP_WIDTH, SHIP_HEIGHT)), 90)
 
 PROJECTILE_SHOT = pygame.mixer.Sound('assets/projectile_shot.wav')
+
+PROJECTILE_HIT = pygame.mixer.Sound('assets/projectile_hit.wav')
