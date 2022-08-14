@@ -210,9 +210,11 @@ def game_loop():
 # New events are posted to check if there is collision with projectile and either one of the players
             if event.type == PLAYER_BLUE_COLLISION:
                 player_blue_health = player_blue_health - 1
+                PROJECTILE_HIT.play()
 
             if event.type == PLAYER_RED_COLLISION:
                 player_red_health = player_red_health - 1
+                PROJECTILE_HIT.play()
 
         render_winner_text = ''
         if player_blue_health <= 0:
