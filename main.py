@@ -200,10 +200,12 @@ def game_loop():
                 if event.key == pygame.K_LALT and len(blue_projectile) < MAX_PROJECTILE_FIRE:
                     projectile = pygame.Rect(player_blue.x + player_blue.width, player_blue.y + player_blue.height // 2, 10, 5)
                     blue_projectile.append(projectile)
+                    PROJECTILE_SHOT.play()
 
                 elif event.key == pygame.K_RALT and len(red_projectile) < MAX_PROJECTILE_FIRE:
                     projectile = pygame.Rect(player_red.x, player_red.y + player_red.height // 2, 10, 5)
                     red_projectile.append(projectile)
+                    PROJECTILE_SHOT.play()
 
 # New events are posted to check if there is collision with projectile and either one of the players
             if event.type == PLAYER_BLUE_COLLISION:
