@@ -246,7 +246,28 @@ def game_loop():
 
         projectile_functionality(player_blue, player_red, blue_projectile, red_projectile)
 
-game_loop()
+def main_menu(win):
+    run = True
+
+    while run:
+        win.blit(SPACE_BACKGROUND, (0, 0))
+
+        RENDER_MAIN_MENU = MENU_FONT.render('Press the mouse to begin...', 1, NEON_GREEN)
+
+        win.blit(RENDER_MAIN_MENU, (WIN_WIDTH // 2 - RENDER_MAIN_MENU.get_width() // 2, WIN_HEIGHT // 2 - RENDER_MAIN_MENU.get_height() // 2 - 10))
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run  = False
+
+                pygame.quit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                game_loop()
+
+        pygame.display.update()
+
+main_menu(WIN)
 
 if __name__ == '__main__':
-    game_loop()
+    main_menu(WIN)
