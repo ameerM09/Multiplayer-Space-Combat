@@ -8,4 +8,5 @@ pygame.font.init()
 pygame.mixer.init()
 
 from .setup import *
+from .assets import *
 from .heart_health import *
