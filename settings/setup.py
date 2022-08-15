@@ -41,19 +41,3 @@ MAX_PROJECTILE_FIRE = 3
 # Sets fonts used in game
 MENU_FONT = pygame.font.SysFont('Comicsans', 55)
 RENDER_WINNER = pygame.font.SysFont('Comicsans', 45)
-
-SPACE_BACKGROUND = pygame.transform.scale(pygame.image.load(os.path.join('assets/space_background.png')), (WIN_WIDTH, WIN_HEIGHT))
-
-# Modified player objects
-PLAYER_A = pygame.image.load(os.path.join('assets/blue_spaceship.png'))
-
-BLUE_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(PLAYER_A, (SHIP_WIDTH, SHIP_HEIGHT)), 270)
-
-# Rotates and dilates image
-PLAYER_B = pygame.image.load(os.path.join('assets/red_spaceship.png'))
-
-RED_SPACESHIP = pygame.transform.rotate(pygame.transform.scale(PLAYER_B, (SHIP_WIDTH, SHIP_HEIGHT)), 90)
-
-PROJECTILE_SHOT = pygame.mixer.Sound('assets/projectile_shot.wav')
-
-PROJECTILE_HIT = pygame.mixer.Sound('assets/projectile_hit.wav')
