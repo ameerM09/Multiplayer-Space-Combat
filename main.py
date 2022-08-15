@@ -244,9 +244,16 @@ def main_menu(win):
     while run:
         win.blit(SPACE_BACKGROUND, (0, 0))
 
-        RENDER_MAIN_MENU = MENU_FONT.render('Press the mouse to begin...', 1, NEON_GREEN)
+        win.blit(MAIN_MENU_LOGO, (WIN_WIDTH // 2 - MAIN_MENU_LOGO.get_width() // 2, 125))
+        
+        play_btn = PlayButton(WIN_WIDTH // 2 - MAIN_MENU_PLAY_BTN.get_width() // 2, 
+                            WIN_HEIGHT // 1.85 - MAIN_MENU_PLAY_BTN.get_height() // 2, 
+                            MAIN_MENU_PLAY_BTN)
 
-        win.blit(RENDER_MAIN_MENU, (WIN_WIDTH // 2 - RENDER_MAIN_MENU.get_width() // 2, WIN_HEIGHT // 2 - RENDER_MAIN_MENU.get_height() // 2 - 10))
+        play_btn.draw(WIN)
+        
+        if play_btn.check_for_click():
+            game_loop()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -254,8 +261,9 @@ def main_menu(win):
 
                 pygame.quit()
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                game_loop()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    game_loop()
 
         pygame.display.update()
 
