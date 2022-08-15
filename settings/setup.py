@@ -35,6 +35,10 @@ PROJECTILE_VELOCITY = 8
 SHIP_WIDTH = 64
 SHIP_HEIGHT = 64
 
+# Dimensions for menu's play button
+PLAY_BTN_WIDTH = 192
+PLAY_BTN_HEIGHT = 128
+
 # Maximum number of bullets that can be fired at once
 MAX_PROJECTILE_FIRE = 3
 
