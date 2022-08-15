@@ -39,5 +39,4 @@ SHIP_HEIGHT = 64
 MAX_PROJECTILE_FIRE = 3
 
 # Sets fonts used in game
-MENU_FONT = pygame.font.SysFont('Comicsans', 55)
 RENDER_WINNER = pygame.font.SysFont('Comicsans', 45)
