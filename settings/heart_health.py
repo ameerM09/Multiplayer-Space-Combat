@@ -1,8 +1,5 @@
 from . import *
 
-HEART_WIDTH = 56.25
-HEART_HEIGHT = 56.25
-
 HEART_HEALTH = pygame.transform.scale(pygame.image.load(os.path.join('assets', 'heart_health.png')), (HEART_HEIGHT, HEART_WIDTH))
 
 class Heart():
