@@ -5,7 +5,7 @@ WIN_WIDTH = 900
 WIN_HEIGHT = 550
 CAPTION = 'Space Combat'
 
-# Sets the position of hte barrier between two players
+# Sets the position of the barrier between two players
 BARRIER = pygame.Rect((WIN_WIDTH // 2) - 5, 0, 3, WIN_HEIGHT)
 
 # Screen display
